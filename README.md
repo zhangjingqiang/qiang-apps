@@ -13,8 +13,8 @@ Qiang's apps. As a geek:-)
 ```ruby
 heroku config:set ABOUT_ME=[...]
 heroku config:set EMAIL=[...]
-heroku config:set MAILER_USER_NAME=[...]
-heroku config:set MAILER_PASSWORD=[...]
+heroku config:set MANDRILL_USERNAME=[...]
+heroku config:set MANDRILL_API_KEY=[...]
 heroku run rake db:migrate db:seed_fu
 heroku run rails console
 Admin.create!({ :email => '...', :password => '...', :password_confirmation => '...' })
