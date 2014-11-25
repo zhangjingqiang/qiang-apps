@@ -1,0 +1,12 @@
+<%= bootstrap_form_for @contact do |f| %>
+
+<%= f.alert_message "Please fix the errors below." %>
+
+<%= f.text_field :name %>
+<%= f.text_field :email %>
+<%= f.text_field :subject %>
+<%= f.text_area :message %>
+
+<%= f.primary "Submit" %>
+
+<% end %>

@@ -1,0 +1,20 @@
+defaults: &defaults
+  site_name: Qiang Apps
+
+development:
+  <<: *defaults
+  host: nitrousbox.com
+  domain: nitrousbox.com
+  subdomain: supersonic-dragonstone-28-163715.apne1
+
+test:
+  <<: *defaults
+  host: nitrousbox.com
+  domain: nitrousbox.com
+  subdomain: supersonic-dragonstone-28-163715.apne1
+
+production:
+  <<: *defaults
+  host: herokuapp.com
+  domain: herokuapp.com
+  subdomain: qiang-apps

@@ -1,0 +1,14 @@
+<h1>About me</h1>
+<hr>
+<% if !@about.nil? %>
+<div class="col-xs-12 col-sm-12">
+  <div class="panel panel-<%= random_color %>">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= @about.try(:title) %></h3>
+    </div>
+    <div class="panel-body">
+      <%= simple_format(@about.try(:description)) %>
+    </div>
+  </div>
+</div><!--/span-->
+<% end %>
