@@ -25,9 +25,9 @@
     <div class="list-group">
       <% @tags.each do |tag| %>
         <% if params[:tag_id] == tag_name(tag.id) %>
-          <%= link_to tag.name, "/tags/#{tag.name}/apps", class: "list-group-item active" %>
+          <%= link_to tag.name.to_s + " (" + tag.apps.count.to_s + ")", "/tags/#{tag.name}/apps", class: "list-group-item active" %>
         <% else %>
-          <%= link_to tag.name, "/tags/#{tag.name}/apps", class: "list-group-item" %>
+          <%= link_to tag.name.to_s + " (" + tag.apps.count.to_s + ")", "/tags/#{tag.name}/apps", class: "list-group-item" %>
         <% end %>
       <% end %>
     </div>
