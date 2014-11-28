@@ -26,7 +26,7 @@ class App < ActiveRecord::Base
 
   def tag_list=(tags_string)
     tags_string.split(',').each do |tag|
-      tag = tag.strip.downcase
+      tag = tag.parameterize
       self.tags << ::Tag.where(name: tag).first_or_create unless self.tags.collect(&:name).include?(tag)
     end
     self.tags
