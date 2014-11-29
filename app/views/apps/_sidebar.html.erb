@@ -1,0 +1,20 @@
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+  <div class="panel panel-<%= random_color %>">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= @notice.try(:title) %></h3>
+    </div>
+    <div class="panel-body">
+      <%= simple_format(@notice.try(:body)) %>
+    </div>
+  </div>
+  
+  <div class="list-group">
+    <% @tags.each do |tag| %>
+      <% if params[:tag_id] == tag_name(tag.id) %>
+        <%= link_to tag.name.to_s + " (" + tag.apps.count.to_s + ")", "/tags/#{tag.name}/apps", class: "list-group-item active" %>
+      <% else %>
+        <%= link_to tag.name.to_s + " (" + tag.apps.count.to_s + ")", "/tags/#{tag.name}/apps", class: "list-group-item" %>
+      <% end %>
+    <% end %>
+  </div>
+</div><!--/.sidebar-offcanvas-->

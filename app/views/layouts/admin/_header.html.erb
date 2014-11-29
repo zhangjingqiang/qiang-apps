@@ -23,6 +23,9 @@
         <li<%= ' class=active' if params[:controller] == 'admin/contacts' %>>
           <%= link_to "Contacts", admin_contacts_path %>
         </li>
+        <li<%= ' class=active' if params[:controller] == 'admin/notices' %>>
+          <%= link_to "Notices", admin_notices_path %>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>

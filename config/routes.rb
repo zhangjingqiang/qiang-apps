@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
     resources :abouts
     resources :contacts
+    resources :notices
   end
 
   root 'apps#index'

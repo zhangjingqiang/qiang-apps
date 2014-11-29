@@ -1,0 +1,7 @@
+<%- model_class = Notice -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= bootstrap_form_for @notice, :url => { :action => "create" } do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
