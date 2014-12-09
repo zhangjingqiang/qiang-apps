@@ -14,6 +14,8 @@ gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'will-paginate-i18n', '~> 0.1.15'
 gem 'settingslogic', '~> 2.0.9'
 gem 'seed-fu', '~> 2.3'
+gem 'jquery-datatables-rails', '~> 3.1.1'
+gem 'ajax-datatables-rails', '0.1.2'
 
 group :development, :test do
   gem 'sqlite3'

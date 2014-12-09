@@ -4,7 +4,10 @@ class Admin::AboutsController < ApplicationController
   before_action :set_about, only: [:show, :edit, :update, :destroy]
 
   def index
-    @abouts = About.paginate(:page => params[:page])
+    respond_to do |format|
+      format.html
+      format.json { render json: AboutDatatable.new(view_context) }
+    end
   end
 
   def show
