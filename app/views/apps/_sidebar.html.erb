@@ -17,4 +17,14 @@
       <% end %>
     <% end %>
   </div>
-</div><!--/.sidebar-offcanvas-->
+  
+  <div class="panel panel-<%= random_color %>">
+    <div class="panel-heading">
+      <h3 class="panel-title">Statistics</h3>
+    </div>
+    <div class="panel-body">
+      <p>Apps: <%= App.count %></p>
+      <p>Tags: <%= Tag.count %></p>
+    </div>
+  </div>
+</div>
