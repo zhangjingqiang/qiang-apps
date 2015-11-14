@@ -4,7 +4,7 @@
       <h3 class="panel-title"><%= @notice.try(:title) %></h3>
     </div>
     <div class="panel-body">
-      <%= simple_format(@notice.try(:body)) %>
+      <%= auto_link(simple_format(@notice.try(:body))) %>
     </div>
   </div>
   
