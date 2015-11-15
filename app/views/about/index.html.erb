@@ -7,7 +7,7 @@
       <h3 class="panel-title"><%= @about.try(:title) %></h3>
     </div>
     <div class="panel-body">
-      <%= simple_format(@about.try(:description)) %>
+      <%= auto_link(simple_format(@about.try(:description))) %>
     </div>
   </div>
 </div><!--/span-->
