@@ -1,6 +1,17 @@
 <div class="page-header">
   <h1>About</h1>
 </div>
+
+<div class="row">
+  <div class="col-lg-12" align="right">
+    <div class="input-group">
+      <%= link_to 'New', new_admin_about_path, :class => 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+
+<hr>
+
 <table id="abouts-table" class="table table-bordered table-striped table-hover table-condensed", data-source="<%= admin_abouts_path(format: :json) %>">
   <thead>
     <tr>
@@ -16,9 +27,3 @@
   <tbody>
   </tbody>
 </table>
-
-<div style="clear:both;"></div>
-
-<%= link_to "New",
-            new_admin_about_path,
-            :class => 'btn btn-primary' %>

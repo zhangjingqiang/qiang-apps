@@ -27,9 +27,9 @@ class Admin::TagsController < ApplicationController
       else
         format.html { render action: 'new' }
         format.json { render json: @tag.errors, status: :unprocessable_entity }
-      end 
-    end 
-  end 
+      end
+    end
+  end
 
   def update
     respond_to do |format|
@@ -39,8 +39,8 @@ class Admin::TagsController < ApplicationController
       else
         format.html { render action: 'edit' }
         format.json { render json: @tag.errors, status: :unprocessable_entity }
-      end 
-    end 
+      end
+    end
   end
 
   def destroy
@@ -51,10 +51,18 @@ class Admin::TagsController < ApplicationController
     end
   end
 
+  def search
+    if params[:q]
+      @tags = Tag.where("name LIKE ?", "%" + params[:q] + "%").paginate(:page => params[:page])
+    else
+      redirect_to action: index
+    end
+  end
+
   private
     def set_tag
       @tag ||= Tag.find_by(name: params[:id])
-    end 
+    end
 
     def tag_params
       params.require(:tag).permit(:name)

@@ -1,0 +1,70 @@
+<div class="page-header">
+  <h1>App</h1>
+</div>
+
+<div class="row">
+  <form action="<%= admin_search_apps_path %>" method="get">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <input type="text" class="form-control" name="q" placeholder="Search for..." value="<%= params[:q] %>">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">Go!</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </form>
+  <div class="col-lg-6" align="right">
+    <div class="input-group">
+      <%= link_to 'New', new_admin_app_path, :class => 'btn btn-primary' %>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+<hr>
+
+<table class="table table-bordered table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Permalink</th>
+      <th>Description</th>
+      <th>URL</th>
+      <th>Position</th>
+      <th>Tags</th>
+      <th>Created At</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @apps.each do |app| %>
+      <tr>
+        <td><%= app.name %></td>
+        <td><%= app.permalink %></td>
+        <td><%= truncate(app.description, length: 30) %></td>
+        <td><%= app.url %></td>
+        <td><%= app.position %></td>
+        <td>
+          <% app.tags.each do |tag| %>
+            <%= link_to "/admin/tags/#{tag.name}/apps" do %>
+              <span class="label label-<%= random_color %>"><%= tag.name %></span>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%=l app.created_at %></td>
+        <td>
+          <%= link_to admin_app_path(app), :class => "btn btn-info" do %>
+            R
+          <% end %>
+          <%= link_to edit_admin_app_path(app), :class => "btn btn-success" do %>
+            U
+          <% end %>
+          <%= link_to admin_app_path(app), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" do %>
+            D
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @apps, renderer: BootstrapPagination::Rails %>
