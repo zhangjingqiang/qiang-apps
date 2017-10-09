@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= Settings.site_name %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <script type="text/javascript" src="../js/highcharts.js"></script>
-  <script src="../js/pace.min.js"></script>
-  <link href="../css/pace.css" rel="stylesheet" />
-  <link rel="shortcut icon" href="favicon.ico">
-</head>
-<body>
-  <%= render 'layouts/header' %>
-  <div class="container">
-    <%= render 'layouts/messages' %>
-    <%= yield %>
-    <a href="#" class="scrollToTop"></a>
-    <hr>
-    <%= render 'layouts/footer' %>
-  </div> <!-- /container -->
-  <%= render 'layouts/google_analytics' %>
-</body>
+  <head>
+    <title><%= Settings.site_name %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script type="text/javascript" src="../js/highcharts.js"></script>
+    <script src="../js/pace.min.js"></script>
+    <link href="../css/pace.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+      <a href="#" class="scrollToTop"></a>
+      <hr>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
 </html>
